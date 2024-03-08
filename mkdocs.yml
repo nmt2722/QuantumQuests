@@ -1,0 +1,70 @@
+site_name: Quantum Quests
+theme:
+  name: material
+  palette: 
+    
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Open Sans
+  features:
+    -navigation.tabs
+    -navigation.tabs.sticky
+nav:
+  - Home: index.md
+  - About: about.md
+  - Subject 1:
+    - S1: Art1/art1landing.md
+      
+      # Add more topics as needed
+  - Subject 2:
+    - S2: Art2/art2landing.md
+      # Add more subjects as needed
+  - Subject 3:
+    - S3: Art3/art3landing.md
+      
+      # Add more subjects as needed  
+  - Contact: contact.md
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink : true
+      toc_depth : 3
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+
+
+
+
+
+plugins:
+    - search
+    - mermaid2
