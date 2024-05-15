@@ -6,12 +6,16 @@ theme:
 
     # Palette toggle for light mode
     - scheme: default
+      primary: purple
+      accent: teal
       toggle:
         icon: material/weather-night 
         name: Switch to dark mode
 
     # Palette toggle for dark mode
     - scheme: slate
+      primary: teal
+      accent: orange
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
@@ -21,22 +25,43 @@ theme:
     -navigation.tabs
     -navigation.tabs.sticky
 nav:
-  - Home: index.md
-  - About: about.md
-  - Subject 1:
-    - S1: Art1/art1landing.md
-      
+  - Home: index.md  
+  - Part 1:
+    - Preamble: Preamble/intro.md
+    - Statical Indeterminacy: Preamble/statical_indeterminacy.md
       # Add more topics as needed
-  - Subject 2:
-    - S2: Art2/art2landing.md
+  - Part 2:
+    - Overview: Art2/art2landing.md
+    - Sec1 : 
+      - 'Overview' : Art2/A2S1/a2s1.md
+      - Sec1.1 : Art2/A2S1/a2s1.1.md
+      - Sec1.2 : Art2/A2S1/a2s1.2.md
+    - Sec2 : Art2/A2S2/a2s2.md
+    - Sec3 : Art2/A2S3/a2s3.md
+    - Sec4 : Art2/A2S4/a2s4.md
+    - Sec5 : 
+      - Sec5.1 : Art2/A2S5/a2s5.md
+
       # Add more subjects as needed
-  - Subject 3:
-    - S3: Art3/art3landing.md
+  - Part 3:
+      - 'Methods of Structural Analysis':
+        - 'Overview': Part3/intro3.md
+      - 'Elastic Analysis': 
+        - 'Elstic Analysis Overview': Part3/ElasticAnalysis/elastic_analysis_overview.md
+        - 'First Order Elastic Analysis': Part3/ElasticAnalysis/first_order_elastic_analysis.md
+        - 'Second Order Elastic Analysis': Part3/ElasticAnalysis/second_order_elastic_analysis.md
+      - 'Buckling Analysis':
+        - 'Buckling Analysis Overview': Part3/BucklingAnalysis/buckling_analysis_overview.md
+        - 'Linear Bucklling Analysis': Part3/BucklingAnalysis/linear_buckling_analysis.md
+        - 'Inelastic Buckling Analysis': Part3/BucklingAnalysis/inelastic_buckling_analysis.md
       
-      # Add more subjects as needed  
+      # Add more subjects as needed 
+  - About: about.md
   - Contact: contact.md
+  - Testing: testing.md
 markdown_extensions:
   - admonition
+  - abbr
   - attr_list
   - def_list
   - footnotes
@@ -59,12 +84,29 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
+  - pymdownx.tabbed:
+      alternate_style: true
 
+extra_javascript:
+  - javascripts/katex.js
+  - javascripts/katex/katex.min.js
+  - javascripts/katex/contrib/auto-render.min.js
 
+extra_css:
+  - javascripts/katex/katex.min.css
 
+watch:
+  - includes
 
 
 plugins:
     - search
     - mermaid2
+    - glightbox
